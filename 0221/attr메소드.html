@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+img {
+  width: 50px;
+  height: 50px;
+}
+</style>
+</head>
+<body>
+    <h4>src속성에서 파일명 추출하고 title속성으로 설정하기</h4>    
+    <img src="../images/짱1.jpg" alt="">
+    <img src="../images/짱2.jpg" alt="">
+    <img src="../images/짱3.jpg" alt="">
+    <img src="../images/짱4.jpg" alt="">
+    <img src="../images/짱구56.jpg" alt="">
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+
+    $('img').attr('title','동일속성적용');
+
+
+    /* $('img').attr('src', function(p_idx, p_attr){
+        let strIdx = p_attr.lastIndexOf("/") + 1;
+        let endIdx = p_attr.lastIndexOf(".");
+        let v_name = p_attr.substring(strIdx,endIdx);
+        console.log(v_name);
+    });
+ */
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script>
+    function f_fnc(p_arg){
+        alert(p_arg[1]); //배열 정보는 index로 일부 추출
+    }
+    // f_fnc("바질","패스토");
+    // f_fnc("바질","패스토"); //배열정보
+
+    function f_fnc1(p_arg){
+        alert(p_arg.연말);  //문자열은 . 사용
+        alert(p_arg[1222]); // 숫자열은 [] 배열안에 집어넣기 
+        alert(p_arg.크리스마스);
+    }
+    // f_fnc1({연말:"시상식",1222:"동지",크리스마스:"x-mas"});
+
+    function f_fnc2(p_arg1, p_arg2){
+        alert(p_arg1 + "두번째로 넘어오는 값이 없을 때 parameter는 " + p_arg2 +"를 나타냄");
+    }
+    // f_fnc2("첫번째 arguments...")
+
+    function f_fnc3(p_arg){
+        // alert(p_arg); // 함수자체의 정보 그대로 알림창에 출력
+        alert(p_arg()); //함수를 호풀하고 실행함
+    }
+    f_fnc3(function(){alert("1 함수가 전달됨")});
+
+
+
+
+
+    
+</script>

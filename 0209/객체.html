@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script>
+    /* 객체 생성 */
+
+    //리터럴 방식
+    // {property-name : property-value}
+    // property-value의 값이 함수인 경우 '메소드'라 칭한다
+    
+    let emptyObj = {}; //빈 객체 생성
+    
+    let myObj = {
+        name: "아이유",
+        age : 30,
+        hello : function(){
+            return "이름은 " + this.name + "이고, 나이는 " + this.age + "입니당";
+        }
+    };
+    // console.log(myObj.age);
+    // console.log(myObj.hello);
+    // console.log(myObj.hello());
+
+    // console.log(Object.keys(myObj));
+    // console.log(Object.values(myObj));
+    // console.log(Object.entries(myObj));
+    
+    
+    //생성자 방식 - new연산자를 이용해 내장객체의 생성자 함수를 호출하여 객체 생성
+    let myObj2 = new Object();
+    myObj2.name = "아니유";
+    myObj2.age = "40";
+    myObj2.hello = function(){
+        // return "이름은 " + this.name + "이고, 나이는 " + this.age + "입니당";
+        return `이름은 ${this.name}이고, 나이는 ${this.age} 입니당`;
+    };
+    
+    // console.log(myObj2.name);
+    // console.log(Object.values(myObj2));
+    // console.log(myObj2.hello());
+    
+    //내장객체 생성자 함수를 통해 String, Array 객체를 생성할 수도 있음
+    let strObj = new String("hello");
+    console.log(strObj, strObj[0]);
+    console.log(Object.keys(strObj));
+
+    let arrObj = new Array([1,2,3],[4,5]);
+    console.log(arrObj[1]);
+    console.log(Object.values(arrObj));
+    
+    
+    //생성자 방식 - 
+    //사용자 정의 생성자 함수를 정의 후
+    let SelfObj = function(name, age){
+        this.name = name;
+        this.age = age;
+        this.한국나이 = parseInt(age) + 2;
+        this.hello = function(){
+            return `이름은 ${this["name"]}이고
+            나이는 ${this.age}, 한국나이는 ${this["한국나이"]}죠`;                    
+        }
+    }
+    //객체 생성
+    let sfObj = new SelfObj('IU','20');
+    console.log(sfObj.age);
+    console.log(sfObj.한국나이);
+    console.log(sfObj.hello());
+
+    console.log("동적으로 속성 추가 전 >> ", sfObj);
+
+    //동적으로 객체의 속성(메소드) 추가
+    sfObj.팬클럽 = "유애나";
+    sfObj["팬 클럽"] = "uandi";
+    sfObj.fanclub = function(){
+        return `팬클럽 : ${this["팬클럽"]} - 팬 클럽 : ${this["팬 클럽"]}`;
+    }
+    
+    console.log("동적으로 속성 추가 후 >> ", sfObj);
+    console.log("동적으로 메소드 추가 반환값 확인 >> ", sfObj.fanclub());
+    
+    //동적으로 객체 속성 삭제
+    delete sfObj["팬 클럽"];
+    delete sfObj.팬클럽;
+    delete sfObj.fanclub;
+
+    
+    console.log("동적으로 속성 삭제 후 >> ", sfObj);
+    console.log(sfObj.fanclub()); //삭제된 메소드 error 발생
+/*
+    객체의 속성과 메소드에 접근하는 방법
+    1. 객체.key    >> 마침표(.)을 통한 접근
+    2. 객체["key"] >>대괄호 안에 key를 문자열로 넣어 접근
+    * 식별자로 허용되지 않는 문자나 숫자에 대한 정보에 접근하기 위해 대괄호 표기법 사용 
+ */   
+</script>

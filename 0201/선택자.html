@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+    #goblin {
+      font-weight: bold;
+      color: red;
+    }
+    /* 요소(tag)선택자 */
+    div {
+      color: rgb(89,18,221);
+      background-color: black;
+    }
+    /* id선택자 */
+    #hong {
+      color: orange;
+      /* border-style: double;
+      border-width: 5px;
+      border-color: red; */
+      border: 10px ridge plum;  /* 축약으로 작성, 순서는 상관없음 */
+    }
+    /* class선택자 */
+    .kes {
+      color: blue;
+      background-color: aqua;
+    }
+    /* 전체선택자 */
+    * {
+      border: 1px solid hotpink;
+    }
+    /* 다중선택 */
+    div, p {
+      font-style: italic;
+    }
+</style>
+</head>
+<body>
+    <!-- id는 페이지 내 유일 값으로, class는 중복 적용 가능 -->
+    <div class="kes">더 글로리</div>
+    <div class="kes">미스터 션샤인</div>
+    <div id="goblin">도깨비</div>
+    <p id="hong">환혼</p>
+    <div class="kes">시크릿 가든</div>
+    <div class="kes">파리의 연인</div>
+</body>
+</html>

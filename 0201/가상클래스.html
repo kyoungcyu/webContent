@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+a:link {
+  color: lime;
+}
+a:visited {
+  color: lightpink;
+}
+a:hover {
+  color: red;
+}
+a:active {
+  color: black;
+}
+tr:first-child {
+  background-color: black;
+}
+tr:last-child {
+  background-color: brown;
+}
+/* tr:nth-child(2) { */ /* child관련 index는 1부터 시작 */
+tr:nth-child(even) {    /* even - 짝수, odd - 홀수 */
+  background-color: lightblue;    
+}
+</style>
+</head>
+<body>
+    <!-- 가상클래스 - pseudo class : 상태 또는 구조에 의한 선택 방법을 제공 -->
+    <table border="">
+        <tr>
+            <td><a href="https://www.w3schools.com/css/css_pseudo_classes.asp">w3schools.com</a></td>
+        </tr>
+        <tr>
+            <td>냉무</td>
+        </tr>
+        <tr>
+            <td>냉무</td>
+        </tr>
+        <tr>
+            <td>냉무</td>
+        </tr>
+        <tr>
+            <td>냉무</td>
+        </tr>
+        <tr>
+            <td>냉무</td>
+        </tr>
+    </table>    
+</body>
+</html>

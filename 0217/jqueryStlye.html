@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+    window.onload =function(){
+    //javaScript를 이용한 스타일 적용 - 요소 하나를 대상으로 
+    let v_h4s = document.querySelectorAll('h4');
+    for(let i=0; i<v_h4s.length; i++){
+        v_h4s[i].style.backgroundColor = "lightblue";
+        }
+    }
+
+    //jQuery를 이용한 스타일 적용 - 전체 요소를 대상으로
+    $(document).ready(function(){
+        $('h4').css('color','brown');
+        //element queue  : 요소 행렬
+        $('h4').eq(1).css('color','blue').css('backgroundColor','lightgreen');
+    });
+
+
+
+</script>
+<body>
+    <h4>jQuery1</h4>    
+    <h4>jQuery2</h4>    
+    <h4>jQuery3</h4>    
+    <h4>jQuery4</h4>    
+</body>
+</html>

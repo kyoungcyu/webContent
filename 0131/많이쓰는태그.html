@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+            img{
+                width: 100px;
+                height: 150px;
+            }
+            table{
+                width: 400px;
+            }
+            td{
+                height: 30px;
+            }
+            #tblEx{
+               border-width: 3px;
+                border-color: blue;
+                border-spacing:5px;
+                caption-side: bottom;
+                table-layout: fixed;
+            }
+            #ta
+</style>
+</head>
+<body>
+
+    <!-- 절대경로: 웹페이지나 파일이 가진 고유한 경로 -->
+    <!-- 프로젝트 외부에 존재하는 파일은 보안상의 이유로 접근불가(웹에서 로컬로 접근x) -->
+    <img src="C:\Users\PC-19\Downloads\정남.jpg" alt="절대경로이미지">
+
+    <!-- 최상단 표시(/) -->
+    <img src="/정남.jpg" alt="최상단 (루트)에서부터 파일접근은 가능">
+    <!-- 현재문서와 같은 폴더안의 이미지(download.jpg)를 루트(/)에서부터 접근하여 표현해보자 -->
+    <img src="/0131/download.jpg" alt="루트에서부터 이미지 표현">
+
+    <!-- 상대경로(현재 위치를 기준으로) 이미지 표현 -->
+    <!-- 현재위치표시 (./) 써도되고 안써도됨 -->
+    <img src="download.jpg"   alt="배정남이미지">   
+    <img src="./download.jpg"  alt="배정남이미지">
+
+    <!-- (../) 통해서 한단계 위 파일 접근 -->
+    <img src="../정남.jpg" alt="배정남 화보">
+
+    <!-- alternative(대안): 이미지가 지원되지 않을 때 글자로 대체(웹접근성 관련) -->
+    
+    <!-- 연습. 상대경로로 images폴더안의 이미지 표현하기 -->
+    <img src="../images/woobin.jpg" alt="">
+    <!-- 웹 이미지도 표현가능(우측클릭 이미지주소복사) -->
+    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F609%2F2022%2F07%2F18%2F202207181136356710_1_20220718120103287.jpg&type=a340" alt="웹사이트 주소 복사 붙여넣기">
+
+    <hr>
+
+    <!-- table: 줄 맞추기 용도로 개발자들이 즐겨 사용  -->
+    <!-- 붉은색 태그는 권장하지 않음이나 , 예외로 사용 -->
+    <!-- table>tr*3>td*3 행과 열을 3개 씩 만들어주는 단축키 -->
+
+    <!--table border 경계선0일시 없고 1일시 있음을 의미    -->
+
+    <table border="1">
+        <!-- table low -->
+        <tr>
+            <!-- table header -->
+            <th>이름</th>
+            <th>특이사항</th>
+        </tr>
+        <tr>
+            <!-- talbe data -->
+            <td>브레드</td>
+            <td>이발사</td>
+        </tr>
+        <tr>
+            <td>윌크</td>
+            <td>우유</td>
+        </tr>
+        <tr>
+            <td>초코</td>
+            <td>파우더</td>
+        </tr>
+    </table>
+
+    
+    <table border="1">
+        <tr>
+            <th>제목1</th>
+            <th>제목2</th>
+            <th>제목3</th>
+            <th>제목4</th>
+        </tr>
+        <tr>
+            <td>내용1</td>
+            <td>내용2</td>
+            <td>내용3</td>
+            <td>내용4</td>
+        </tr>
+        <tr>
+            <td>내용1</td>
+            <td>내용2</td>
+            <td>내용3</td>
+            <td>내용4</td>
+        </tr>
+    </table>
+
+    <table border="1">
+        <tr>
+            <th>1열</th>
+            <th>2열</th>
+            <th>3열</th>
+        </tr>
+
+        <tr>
+            <td rowspan="2">1행 1열</td>
+            <td>1행 2열</td>
+            <td>1행 3열</td>
+        </tr>
+
+        <tr>
+            <!-- <td>2행 1열</td> -->
+            <td>2행 2열</td>
+            <td>2행 3열</td>
+        </tr>
+
+        <tr>
+            <td colspan="3">3행 1열</td>
+            <!-- <td>3행 2열</td> -->
+            <!-- <td>3행 3열</td> -->
+        </tr>
+    </table>
+
+    <table border="3" id=tblEx>
+        <tr>
+            <td colspan="2"></td>
+            <!-- <td></td> -->
+            <td colspan="2"></td>
+            <!-- <td></td> -->
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="4"></td>
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <td colspan="2"></td>
+            <!-- <td></td> -->
+        </tr>
+        <tr>
+            <td colspan="4"></td>
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <td colspan="2" rowspan="2"></td>
+            <!-- <td></td> -->
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- <td colspan="2"></td> -->
+            <!-- <td></td> -->
+        </tr>
+
+    </table>
+</body>
+</html>

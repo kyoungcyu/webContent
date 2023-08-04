@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#container{
+    height: 500px;
+}
+#content{
+height: 100%;
+border: 4px dashed red;
+}
+#content{
+    height: 100%;
+    border: 4px dashed red;
+    color: blue;
+    position: relative;
+}
+#content::after{
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left:10px;
+    right:10px;
+  background-image: url(../images/woobin.jpg);
+  opacity: .2;
+}
+</style>
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+            컨텐츠는 선명하게, 배경은 투명하게 ..
+        </div>
+    </div>
+</body>
+</html>

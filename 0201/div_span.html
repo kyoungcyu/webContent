@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<link rel="stylesheet" href="../css/externalStyleSheet.css">
+<style>
+div {
+  border: 5px solid orange;
+  width: 50%;
+  padding: 10px;
+  margin: 10px;
+}
+span {
+  border: 5px solid purple;
+  /* display: inline-block; */
+  width: 500px;
+  padding: 10px;
+  margin: 10px;
+}
+</style>
+</head>
+<body>
+    <!-- 인라인 스타일 시트로 스타일 작성 -->
+    <div style="border: 3px solid blue;">
+        div요소는 순수한 컨테이너로 보통 활용되며 특별한 기능은 없다 <br>
+        대신 다른 <span>요소들을 묶어 그룹화</span>시킨후 class나 id속성으로 접근하여 꾸미기를 돕는 역할을 함
+    </div>
+
+    <!-- 내부 스타일 시트로 스타일 적용하기 -->
+    <div>
+        span요소도 마찬가지로 특별한 기능은 없으면 주로 요소의 일부분을 꾸미는 역할을 함
+    </div>
+
+    <!-- 외부 스타일 시트로 스타일 적용하기 -->
+    <div id="d3">
+        냉무
+    </div>
+
+</body>
+</html>

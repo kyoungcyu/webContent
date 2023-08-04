@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        iframe{
+            width: 500px;
+            height: 400px;
+            background-color: rgba(9, 169, 243, 0.095);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 유튜브 제공소스 코드 -->
+    <!-- <iframe width="500" height="400" 
+    src="https://www.youtube.com/embed/6WZ67f9M3RE?autoplay=1&mute=1"                         
+    title="모던한 카페에서 나오는 고급스러운 피아노 음악 l GRASS COTTON+" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>-->
+
+    
+    <h3>페이지 안에 페이지 넣기- iframe</h3>
+    <iframe src="//daum.net" frameborder="0"title="네이버화면 표시"></iframe>
+    <iframe src="exercise.html" name ="ifr" frameborder="3"></iframe> 
+    
+    <a href="//naver.com">target: default(_self)</a><br>
+    <a href="//google.com" target="_blank">target:_blank</a>
+
+    <!-- iframe의 name속성을 target대상 프레임으로 이용가능 -->
+    <a href="//ddit.or.kr"target="ifr">대덕인재개발원</a>
+
+</body>
+</html>

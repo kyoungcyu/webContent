@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>공공데이터포탈 정보 가져오기</button>
+    <div id="disp"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script><body>
+<script>
+
+    $('button').on('click',function(){
+
+        $.ajax({
+            //method: 'get',
+            // url: 'http://apis.data.go.kr/6300000/GetBycpListService/getBycpList?' 
+            //         + 'serviceKey=5V%2Bn2x2BctVKq5Ojd%2B%2FTQBqglYTcxX1d49WNUXdPJmPfzy8QGWitvpUVjI3KTrTyO%2FeC%2FgqBvGvazCCA1%2B95jw%3D%3D'
+            //         +'&numOfRows=10'
+            //         + '&pageNo=1'
+            //         + '&type=JSON',
+            url: 'http://apis.data.go.kr/6300000/GetBycpListService/getBycpList?', 
+            data: {
+                //decoding key
+                'serviceKey':'5V+n2x2BctVKq5Ojd+/TQBqglYTcxX1d49WNUXdPJmPfzy8QGWitvpUVjI3KTrTyO/eC/gqBvGvazCCA1+95jw==',
+                'numOfRows':10,
+                'pageNo':1,
+                'type':'json'
+
+            },
+            success: function(rst){
+                // console.log(JSON.parse(rst));
+                // let jsonObj = JSON.parse(rst);
+                let itemArr = rst.response.body.items.item;
+                console.log(itemArr);
+                let str = "<h4>자전거 도로 경로에 인접한 대표 시설, 지역 등을 표기</h4>";
+                $.each(itemArr, function(){
+                    str += `[${this.SIGNGU_NM}] ${this.MAJOR_STOPOVER} <br>`;
+                    $('#disp').html(str);
+                });
+            },
+            error: function(xhr){
+                alert("에러발생: "+xhr.status);
+            },
+            dataType: 'json'
+        });
+    });
+</script>
+</body>
+</html>
+
+
+
+</script>
+
+
+
+</body>
+</html>l

@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+D:\A_teachingMaterial\jQuery\vs-code\.metadata\.plugins\org.eclipse.jdt.core
+2896585647.index
+2079798811.index
+1865797976.index

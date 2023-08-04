@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+img {
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+#parent {
+  border: 4px double gray;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  top: 50px;
+  left: 50px;
+}
+.child {
+  width: 600px;
+  /* border-style: solid;
+  font-size: 0; */
+  position: absolute;
+}
+</style>
+</head>
+<body>
+    <div id="parent">
+        <div class="child">
+            <img src="../images/짱1.jpg" alt="짱구">
+            <img src="../images/짱2.jpg" alt="s">
+            <img src="../images/짱구3.jpg" alt="s">
+            <img src="../images/짱구4.jpg" alt="s">
+            <img src="../images/짱구56.jpg" alt="s">
+            <img src="../images/철수.jpg" alt="s">
+        </div>
+        <div class="child">
+            <img src="../images/짱3.jpg" alt="짱구">
+            <img src="../images/짱4.jpg" alt="w">
+            <img src="../images/짱6.jpg" alt="w">
+            <img src="../images/짱짱.jpg" alt="w">
+            <img src="../images/짱구1.jpg" alt="w">
+            <img src="../images/230px-신짱구.png" alt="w">
+        </div>
+    </div>
+
+<script>
+    var v_chd1 = document.querySelector('.child:first-child');
+    var v_chd2 = document.querySelector('.child:last-child');
+
+    // console.log(v_chd1, v_chd2);
+
+    // 초기 시작 위치 값을 스크립트를 통해 초기화
+    if(!v_chd1.style.left){
+        v_chd1.style.left= "0px";
+        v_chd2.style.left= "600px";
+    }
+    //반복되는 위치 초기화
+
+    function f_move(){
+
+//반복되는 위치 초기화
+    if( parseInt(v_chd1.style.left) == -600 ) v_chd1.style.left = "600px";
+    if( parseInt(v_chd2.style.left) == -600 ) v_chd2.style.left = "600px";
+
+    v_chd1.style.left = parseInt(v_chd1.style.left) - 1 + "px";
+    v_chd2.style.left = parseInt(v_chd2.style.left) - 1 + "px";
+    setTimeout(f_move, 10);
+    }
+    f_move();
+
+</script>   
+</body>
+</html>

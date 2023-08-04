@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+*{
+    padding: 0;  
+    margin: 0;
+}    
+#container{
+    height: 100vh; /* view */ 
+}
+
+
+#content{
+    width: 100vw; /* vw => viewwidth */
+  height: 100%;
+  padding: 40px;
+  border: 10px dashed gray;  
+  box-sizing: border-box;  
+
+  /* background: color image repeat position/size ...; */
+  /* position과 size 속성은 사용되는 단위가 중복될 수 있으므로 /로 구분하고 함께 사용한다. */
+  /* background: gray url(../images/gong.jfif) no-repeat left center/50% ; */
+  
+  /* 다중 이미지 삽입하기 */
+  background:  url(../images/gong.jfif) no-repeat left center/30% ,
+               url(../정남.jpg) right center/30%, 
+               white;
+    
+   opacity: 0.3; 
+  /* background-color: blanchedalmond;
+  background-image: url(../images/woobin.jpg);
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: center center;
+  background-clip: border-box; /* color속성 대상으로 시작 지점 설정 - end 범위까지 
+  background-origin: border-box ; /* image속성 대상으로 시작 지점 설정- infinity */
+} */
+</style>
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+            거기까지라고 누군가 툭 한마디 던지면
+            그렇지 하고 포기할 것 같아
+            잘한거라 토닥이면 왈칵 눈물이 날 것만 같아
+            발걸음은 잠시 쉬고 싶은 걸
+            하지만 그럴 수 없어 하나뿐인 걸 지금까지 내 꿈은
+            오늘 이 기분 때문에 모든 걸 되돌릴 수 없어
+            비교하지마 상관하지마 누가 그게 옳은 길이래
+            옳은 길 따위는 없는 걸 내가 택한 이 곳이 나의 길
+        </div>
+    </div>
+</body>
+</html>

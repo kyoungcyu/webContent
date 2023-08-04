@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+
+    /* $.ajax({
+        method : 'get',
+        //type : 'get',                 //get은 default - 생략가능
+        url : '../0224/test.json', 
+        //data : '',                    //요청 정보 없을 때 생략가능
+        success : function(result){     //성공시 매개변수를 통해 응답데이터 전달
+            alert("결과: " + Object.values(result[0]));
+        },
+        error : function(xhr){          //실패시 객체를 통해 에러코드를 확인
+            alert("에러발생: " + xhr.status); 
+        },
+        dataType: 'json'                //응답데이터 형식 지정(json >> JSON.parse()적용과 같음 )
+    }) */
+
+
+    //단축메소드
+    // $.get(url, data, success, dataType)
+    // $.post(url, data, success, dataType)
+    // $.getJSON(url, data, success)
+
+    $.getJSON(
+        '../0224/test.json',
+        function(rst){
+            alert(rst[0].type);
+        }
+        //,'json' //json을 파싱해서 응답데이터 가져옴
+    );
+
+
+</script>

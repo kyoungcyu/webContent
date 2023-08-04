@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<link rel="stylesheet" href="../css/resetCss.css">
+<style>
+div {
+  border: 1px solid gold;
+  box-sizing: border-box;
+}
+#header {
+  height: 100px;
+  background-color: red;
+}
+#aside, #content {
+  height: 500px;
+  /* opacity: .1; */
+  float: left;
+}
+#aside {
+  background-color: yellow;
+  width: 25%;
+}
+#content {
+  background-color: green;
+  width: 75%;
+}
+#footer {
+  height: 40px;
+  background-color: purple;
+  clear: left; /* float의 흐름을 clear */
+}
+</style>
+</head>
+<body>
+    <!-- 레이아웃을 잡을 때 border속성을 적용해서 눈으로 영역을 확인하며 작업하기 -->
+    <div id="wrapper">
+        <div id="header">머릿글</div>
+        <div id="aside">메뉴</div>
+        <div id="content">내용</div>
+        <div id="footer">바닥글</div>
+    </div>
+</body>
+</html>

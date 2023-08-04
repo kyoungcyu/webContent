@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+/* img {
+  width: 50px;
+} */
+</style>
+</head>
+<body>
+    <input type="button" value="요소추가" id="addElem">
+    <input type="button" value="이미지추가" id="addImg">
+    <input type="button" value="링크추가" id="addLink">
+    
+<script src="../javaScript/random.js"></script>
+<script>
+    let v_addElem = document.querySelector('#addElem');
+    let v_addImg = document.querySelector('#addImg');
+    let v_addLink = document.querySelector('#addLink');
+    let v_count = 1;
+
+    v_addLink.addEventListener('click',function(){
+        let v_aTag =document.createElement('a'); // <a></a>
+        v_aTag.href = "http://www.ddit.or.kr";
+        v_aTag.innerText = "대적인재개발원";
+
+        document.querySelector('body').appendChild(v_aTag);
+    });
+
+    v_addImg.addEventListener('click',function(){
+        
+        // let v_img = document.createElement('img'); //<img>
+        // v_img.src = "../images/som"+ v_count +".jpg";
+        // v_img.width = 100;
+        // v_img.style.height = "100px"; //스타일 속성으로 지정시 단위까지 포함한 문자로 값 지정
+
+        let v_img = "<img src='../images/짱" + v_count + ".jpg' alt='짱구' style='width=50px;'>";
+        document.querySelector('div').insertAdjacentHTML('beforeend',v_img);
+        // document.querySelector('body').appendChild(v_img);
+
+        v_count++;
+
+        if(v_count > 4) v_count = 1;
+    });
+
+
+    v_addElem.addEventListener('click',function(){
+
+        let v_h1 = document.createElement('h1'); //<h1></h1>
+        v_h1.innerText = "요소생성" + v_count;
+        // v_h1.style.backgroundColor = "red";
+        v_h1.style.color = f_rgba();            //랜덤칼라
+        v_h1.style.backgroundColor = f_rgba(); //랜덤칼라
+        document.querySelector('body').append(v_h1); 
+        v_count++;
+    });
+
+    function f_rgba(){
+        /* return "rgba(" + f_random(0,255) 
+                     + "," + f_random(0,255) 
+                     + "," + f_random(0,255) 
+                     + ", 0.8)"; */
+        return `rgba(${f_random(0,255)},${f_random(0,255)},${f_random(0,255)},0.5)`;
+    }
+</script>
+</body>
+</html>

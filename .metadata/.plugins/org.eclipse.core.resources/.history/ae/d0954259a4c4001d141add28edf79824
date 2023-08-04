@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script = type="text/javascript">
+// DOM API를 이용해서 총점을 구해서 출력하시오...
+
+function calc(){
+    var trArr = document.getElementsByTagName("tr");
+
+    for (let i = 1; i < trArr.length; i++) {
+        var tdArr = trArr[i].getElementsByTagName("td");
+        
+    }
+
+}
+
+</script>
+<body>
+    <form>
+        <input type="button" value="총점계산하기" onclick="calc()">
+    </form>
+    
+    <table border="1">
+        <tr>
+            <th>번호</th><th>이름</th><th>국어</th><th>영어</th><th>수학</th><th>총점</th>
+        </tr>
+        <tr>
+            <th>1</th><th>홍길동</th><th>100</th><th>95</th><th>50</th><th></th>
+        </tr>
+        <tr>
+            <th>2</th><th>홍길서</th><th>80</th><th>75</th><th>70</th><th></th>
+        </tr>
+        <tr>
+            <th>3</th><th>홍길남</th><th>90</th><th>85</th><th>90</th><th></th>
+        </tr>
+        <tr>
+            <th>4</th><th>홍길북</th><th>80</th><th>85</th><th>50</th><th></th>
+        </tr>
+
+
+
+    </table>
+
+    
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script>
+    /* 함수 자체와 함수 호출 */
+
+    function f_fnc(){
+        alert("함수 자체를 가리키는 FP");
+        //return문이 생략되어 있어서 undefined을 반환
+        return "나를 호출하는 위치로 값을 반환하고 함수를 종료";
+    }
+    // f_fnc();
+    alert(f_fnc); //fp
+    // alert(f_fnc());
+
+</script>

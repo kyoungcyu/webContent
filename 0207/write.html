@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="button" value="덮" onclick="f_write()">
+
+<script>
+    function f_write(){
+            document.write("<h1>기존 문서를 지우고 새 내용이 덮여 씌워짐</h1>");
+            //따옴표 안에 속 따옴표 사용시 주의
+            //escape 문자 사용(특수문자임을 알리는 백슬래시 '\') 
+            document.write("<img src='../images/사자.jpg' alt='사자'>");
+    }
+
+    document.write("<div style='text-align: center;'>");
+    for(let i=1; i<=6; i++){
+        document.write("<h"+ i +">document객체의 write메소드</h" + i+">" );
+    }
+    for(let i=5; i>0; i--){
+        document.write("<h"+ i +">document객체의 write메소드</h" + i+">" );
+    }
+    document.write("</div>");
+</script>
+</body>
+</html>

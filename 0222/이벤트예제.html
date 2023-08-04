@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+img {
+  width: 80px;
+  height: 80px;
+}
+button {
+  display: none;
+}
+</style>
+</head>
+<body>
+
+    <img src="../images/짱1.jpg" data-src2="../images/짱5.jpg" alt="">
+    <img src="../images/짱2.jpg" data-src2="../images/짱3.jpg" alt="">
+    <img src="../images/짱3.jpg" data-src2="../images/짱구4.jpg" alt="">
+    <img src="../images/짱4.jpg" data-src2="../images/짱5.jpg" alt="">
+    <button>보이기</button>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+    let v_src = "";    
+    $('img').on({
+        mouseover:function(){
+            v_src = $(this).attr('src');
+            let v_src2 = $(this).data('src2');
+
+            $(this).attr('src',v_src2);
+        },
+        mouseout:function(){
+            $(this).attr('src',v_src);
+        },
+        dblclick:function(){
+            $(this).hide();
+            //버튼 보이기
+            if($('img:visible').length < 1) $(':button').show();
+        }
+    });
+
+    $(':button').click(function(){
+        $('img').show();
+        $(this).hide();
+    });
+
+</script>
+</body>
+</html>

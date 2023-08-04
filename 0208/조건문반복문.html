@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script>
+
+    //문자열은 ""만 false로 형변환 되고. 나머지(" ", 공백포함)는 true로 형변환됨
+    //숫자는 0만 false로 형변환, 나머지(음수포함)는 true로 형변환
+    //true로 조건을 사용시 4자, !0으로 사용하면 2자 >> 2자절약
+    if(""){
+        alert("참!");
+    }else{
+        alert("거짓!");
+    }
+
+    let v_sum =0;
+    let v_num =0;
+    
+    for(let i=0;i<=10;i+=2){
+        alert(i);
+        if(i==2) continue; //해당조건을 만나면 skiop해라 (=아래 실행문 실행하지않고 다음 조건 반복문 처리)
+        v_sum +=i;
+        alert(v_sum)
+ㄱ
+        v_num++;
+        if(v_num ==3){ //무한루핑되는 조건문에는 반드시 빠져나갈 조건을 지정하자
+            break;      //처음 만나는 반복문을 빠져나감 - 반복문 실행 종료
+        }
+}
+</script>

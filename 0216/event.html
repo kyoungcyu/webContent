@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+div {
+  border: 2px inset orange;
+  width: 100px;
+  height: 100px;
+}
+</style>
+</head>
+<body>
+    <div onmouseover="f_long(this)" style="width: 100px; height: 100px;">길어져</div>
+    <div>늘어져</div>
+    <div>넓어져</div>
+
+<script>
+let timer;
+function f_stop(){
+    clearTimeout(timer);
+}
+
+function f_long(p_this){
+    //alert(p_this.style.width); //요소의 너비값 얻기
+    p_this.style.width = parseInt(p_this.style.width) + 10 + "px";
+    timer = setTimeout(f_long, 400, p_this);
+}
+
+let v_divs = document.querySelectorAll('div');
+
+for(let i=0; i<v_divs.length; i++){
+    v_divs[i].addEventListener('mouseout',function(){
+        f_stop();
+    });
+}
+
+v_divs[1].onmouseover = function f_stretch (){
+    
+    if(!v_divs[1].style.height){
+        v_divs[1].style.height = "100px";
+    }
+    v_divs[1].style.height = parseInt(v_divs[1].style.height) + 10 + "px";
+    timer = setTimeout(f_stretch, 400);
+}
+
+v_divs[2].addEventListener('mouseover', f_wide = function(){
+    if(!v_divs[2].style.height){
+        v_divs[2].style.width = "100px";
+        v_divs[2].style.height = "100px";
+    }
+    v_divs[2].style.width = parseInt(v_divs[2].style.width) + 10 + "px";
+    v_divs[2].style.height = parseInt(v_divs[2].style.height) + 10 + "px";
+    timer = setTimeout(f_wide, 400);
+});
+
+
+
+</script>
+</body>
+</html>

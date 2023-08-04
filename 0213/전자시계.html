@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#id_clock {
+  background-color: black;
+  color: yellow;
+  text-align: center;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+    <div id="id_clock" class="cls_clock">00:00:00</div>
+
+<script>
+    //id속성의 값을 통한 요소 접근방식은 샘플코드 수준에서만 사용하도록..
+    // 실제 요소에 접근할때는 요소선택 메소드를 이용함이 바람직하다
+    // console.log(id_clock); //test용으로만 사용하기
+
+    //구버전 >> getElement~~ (종류가 많음, id는 Element~ 나머지는 Elements~)
+    // let v_idClock = document.getElementById('id_clock');
+    // let v_clsClock = document.getElementsByClassName('cls_clock')[0];
+    // let v_tagClock = document.getElementsByTagName('div')[0];
+    //뉴버전 >> querySelector, querySelectorAll
+    // let v_qsId = document.querySelector('#id_clock');
+    let v_qs = document.querySelector('div'); //가장 첫번째 요소만 선택하여 반환
+    // let v_qsa = document.querySelectorAll('div')[0];
+
+    // console.log(v_idClock, v_clsClock, v_tagClock, v_qsId, v_qs, v_qsa);
+
+    function autoClock(){
+
+        let today = new Date();
+    
+        let v_year = today.getFullYear();   //4자리 년도
+        let v_month = today.getMonth() + 1; //월 정보
+        let v_date = today.getDate();       //일 정보
+        let v_day = today.getDay();         //요일 정보
+        let v_hour = today.getHours();      //시 정보
+        let v_min = today.getMinutes();     //분 정보
+        let v_sec = today.getSeconds();     //초 정보
+        console.log(v_year, v_month, v_date, v_day, v_hour, v_min, v_sec);
+    
+        //1자릿수 데이터에 '0'붙여주기
+        //console.log(v_sec.toString().length);
+        if(v_sec < 10 ){
+            v_sec = "0" + v_sec;
+        }
+        if(v_min.toString().length == 1){
+            v_min = "0" + v_min;
+        }
+        if(v_hour.toString().length == 1){
+            v_hour = "0" + v_hour;
+        }
+
+        //출력
+        v_qs.textContent = `${v_hour}:${v_min}:${v_sec}`;
+        setTimeout(autoClock, 1000);
+    }
+    autoClock();
+    // setInterval(autoClock, 1000);
+
+</script>    
+</body>
+</html>

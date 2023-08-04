@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#wrapper {
+  width: 50%;
+  height: 100px;
+  border: 3px solid pink;
+}
+</style>
+</head>
+<body>
+    <table border="">
+        <tr>
+            <td>이름<input tabindex="1"></td>
+            <td>별명<input tabindex="4"></td>
+        </tr>
+        <tr>
+            <!-- tab에 포커스 적용하지 않도록 '-1' -->
+            <td>나이<input tabindex="-1"></td>
+            <td>주소<input tabindex="5"></td>
+        </tr>
+        <tr>
+            <td>이멜<input tabindex="3"></td>
+            <td>전화<input tabindex="6"></td>
+        </tr>
+    </table>
+
+    <!-- 입력양식이 아닌 요소를 대상으로 포커스 주고 싶을 때 '0' -->
+    <div id="wrapper" contenteditable tabindex="0" onkeydown="f_keykdown()">
+        입력대상이 아니지만 입력가능상태로 만들어주는 속성  <br> contenteditable
+    </div>
+
+<script>
+function f_keykdown(){
+    alert(event.key + " | " + event.keyCode);
+} 
+</script>
+</body>
+</html>

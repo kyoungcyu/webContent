@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        JavaScript
+        자바와는 관련없음
+        비슷한 점은 C언어로부터 출발한 언어라는 점만 동일
+        
+        시초는 사용자쪽 데이터 검증(validation)을 위해 만들어진 언어이나,
+        goolge이 AJAX(비동기통신)을 이용한 GMAIL, GOOGLE MAP 등을 성공시키고 난 후 급속도로 성장하며,
+        자바와 더불어 라이버러리가 가장 많은 언어로 자리잡음
+        
+        브라우저를 컨트롤하는 언어는 현재 자바스크립트가 유일
+        브라우저마다 스크립트를 해석하는 엔진을 따로 가지고 있기 때문에 호환성에 문제가 있음
+        호환성 여부는 caniuse.com에서 확인할 수 있다.
+    </pre>
+<script>
+//엄격모드 - 모던한 방식으로 스크립트를 실행 
+//주석을 제외한 가장 최상단에 작성되어야 기능이 활성화
+"use strict";
+
+var v_mascot="";
+// 즉시실행 함수  
+(function fnc(){
+    v_mascot ="꿈돌이";//엄격모드 적용시 선언되지 않은 변수는 문법적 오류로 지적
+})();
+console.log(v_mascot);
+
+// 변수의 타입은 크게 기본형(primitive)과 참조형(reference)이 있음
+// 기본형은 Number,String,Boolean,undefined,null이 있고 , '.' 을 찍을수 없음 값 세팅안되잇을때
+// 참조형은 Object(array,function,json)로, '.'을 찍어 속성에 접근할수 있음.
+var mascot = 100;
+var mascot = "100";
+var mascot = true;
+var mascot = undefined;
+var mascot = null; //object가 아니라 null임 (초기개발과정에서 발생된 버그)
+console.log(typeof mascot);
+
+var v_sansu = "123" + 123; // + 연산자를 통해 자동으로 문자열로 형변환이 이루어짐
+var v_sansu = "123*1" + 123; // + 문자열을 연사자를 이용해 숫자로 형변환시키는 편법 1
+var v_sansu = Number("123") + 123; // + 문자열을 연사자를 이용해 숫자로 형변환시키는 편법 2
+
+
+let v_sansu1 = "123" * 123; // '-', '*', '/'  연산자는 자동으로 숫자열로 형변환이 이루어짐
+console.log(typeof v_sansu, v_sansu1);
+
+// var키워드 - 재선언o, 재할당o
+// let키워드 - 재선언x, 재할당o
+
+alert(parseInt ("ABC123"));// NaN(Not a Number) 첫번째 글자가 숫자가 아니기 때문에 읽지를 못함 . 
+alert(parseInt ("123ABC")); //문자열을 분리시키고 숫자만 반환 
+
+if("123" ==123){ //동등 비교연산자 (loose equals)
+    alert("뜬다1");
+}
+if("123" === 123){  //일치 비교 연산자 (strict equals)
+    alert("뜬다2");
+}
+if([] == []){   // 배열안에 객체 생성 배열안의 주소값을 비교하는 경우  false
+    alert("뜬다3");
+}
+</script>
+</body>
+</html>
